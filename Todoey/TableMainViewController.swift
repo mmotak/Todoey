@@ -9,7 +9,7 @@
 import UIKit
 
 class TableMainViewController: UITableViewController {
-    let dataSource = DataSource();
+    let todoDataSource = DataSource();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +24,18 @@ class TableMainViewController: UITableViewController {
     //MARK - TABLE VIEW DATA SOURCE
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.size()
+        return todoDataSource.size()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
         
-        cell.textLabel?.text = dataSource.getString(indexPath.row)
+        cell.textLabel?.text = todoDataSource.getString(indexPath.row)
         
         return cell
     }
     
+
     //MARK - TABLE VIEW SELECT ROW
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
@@ -42,6 +43,29 @@ class TableMainViewController: UITableViewController {
         cell?.accessoryType = accessoryType == .checkmark ? .none : .checkmark
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add new to do", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add", style: .default, handler: { (action) in
+            let textField = alert.textFields![0] as UITextField
+            let text = textField.text
+            if !(text?.isEmpty)! {
+                self.addNewItem(textField.text!)
+            }
+        })
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Put new item here"
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func addNewItem(_ text: String) {
+        todoDataSource.addNewString(text)
+        tableView.reloadData()
     }
 }
 

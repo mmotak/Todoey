@@ -9,7 +9,7 @@
 import Foundation
 
 public class DataSource {
-    private let list = ["zadanie 1", "zadanie 2", "zadanie 3"]
+    private var list = ["zadanie 1", "zadanie 2", "zadanie 3"]
     
     public func size() -> Int {
         return list.count
@@ -17,5 +17,9 @@ public class DataSource {
     
     public func getString(_ index: Int) -> String {
         return list[index]
+    }
+    
+    public func addNewString(_ text: String) {
+        list.append(text)
     }
 }
