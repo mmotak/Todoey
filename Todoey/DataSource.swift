@@ -9,7 +9,20 @@
 import Foundation
 
 public class DataSource {
-    private var list = ["zadanie 1", "zadanie 2", "zadanie 3"]
+    private static let KEY = "ToDoListPresistance"
+    
+    private var list = [String]()
+    private let defaults = UserDefaults.standard
+    
+    init() {
+        if let items = defaults.array(forKey: DataSource.KEY) as? [String] {
+            list = items
+        }
+    }
+    
+    private func saveListToStorage() {
+        defaults.set(list, forKey: DataSource.KEY)
+    }
     
     public func size() -> Int {
         return list.count
@@ -21,5 +34,6 @@ public class DataSource {
     
     public func addNewString(_ text: String) {
         list.append(text)
+        saveListToStorage()
     }
 }
