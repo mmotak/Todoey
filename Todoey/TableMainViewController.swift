@@ -21,6 +21,8 @@ class TableMainViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK - TABLE VIEW DATA SOURCE
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.size()
     }
@@ -31,6 +33,15 @@ class TableMainViewController: UITableViewController {
         cell.textLabel?.text = dataSource.getString(indexPath.row)
         
         return cell
+    }
+    
+    //MARK - TABLE VIEW SELECT ROW
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        let accessoryType = cell?.accessoryType
+        cell?.accessoryType = accessoryType == .checkmark ? .none : .checkmark
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
