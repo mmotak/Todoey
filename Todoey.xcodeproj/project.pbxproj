@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283C1FCA20B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 283C1FC820B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld */; };
+		283C1FCC20B1ECD700C6A5C3 /* DataCoreSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C1FCB20B1ECD700C6A5C3 /* DataCoreSource.swift */; };
 		287AB03920B180B8001A0F0C /* PersistanceSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03820B180B8001A0F0C /* PersistanceSource.swift */; };
 		287AB03B20B1820F001A0F0C /* UserDefaultsSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03A20B1820F001A0F0C /* UserDefaultsSource.swift */; };
 		287AB03D20B18974001A0F0C /* FileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03C20B18974001A0F0C /* FileSource.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		283C1FC920B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoeyDataBase.xcdatamodel; sourceTree = "<group>"; };
+		283C1FCB20B1ECD700C6A5C3 /* DataCoreSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoreSource.swift; sourceTree = "<group>"; };
 		287AB03820B180B8001A0F0C /* PersistanceSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceSource.swift; sourceTree = "<group>"; };
 		287AB03A20B1820F001A0F0C /* UserDefaultsSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSource.swift; sourceTree = "<group>"; };
 		287AB03C20B18974001A0F0C /* FileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSource.swift; sourceTree = "<group>"; };
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		283C1FC420B1E96D00C6A5C3 /* DataCoreDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				283C1FC820B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld */,
+			);
+			path = DataCoreDataBase;
+			sourceTree = "<group>";
+		};
 		28AB664620B03D710018B4D0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +76,7 @@
 		28AB665120B03D710018B4D0 /* Todoey */ = {
 			isa = PBXGroup;
 			children = (
+				283C1FC420B1E96D00C6A5C3 /* DataCoreDataBase */,
 				28AB666E20B068F90018B4D0 /* view */,
 				28AB666D20B068EB0018B4D0 /* controller */,
 				28AB666A20B068540018B4D0 /* persistance */,
@@ -90,6 +103,7 @@
 				287AB03820B180B8001A0F0C /* PersistanceSource.swift */,
 				287AB03A20B1820F001A0F0C /* UserDefaultsSource.swift */,
 				287AB03C20B18974001A0F0C /* FileSource.swift */,
+				283C1FCB20B1ECD700C6A5C3 /* DataCoreSource.swift */,
 			);
 			path = persistance;
 			sourceTree = "<group>";
@@ -186,6 +200,8 @@
 				28AB665520B03D710018B4D0 /* TableMainViewController.swift in Sources */,
 				287AB03D20B18974001A0F0C /* FileSource.swift in Sources */,
 				28AB666C20B0686F0018B4D0 /* ToDoItem.swift in Sources */,
+				283C1FCA20B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld in Sources */,
+				283C1FCC20B1ECD700C6A5C3 /* DataCoreSource.swift in Sources */,
 				287AB03B20B1820F001A0F0C /* UserDefaultsSource.swift in Sources */,
 				287AB03920B180B8001A0F0C /* PersistanceSource.swift in Sources */,
 				28AB665320B03D710018B4D0 /* AppDelegate.swift in Sources */,
@@ -384,6 +400,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		283C1FC820B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				283C1FC920B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodel */,
+			);
+			currentVersion = 283C1FC920B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodel */;
+			path = ToDoeyDataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 28AB664720B03D710018B4D0 /* Project object */;
 }
