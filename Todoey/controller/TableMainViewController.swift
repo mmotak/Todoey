@@ -29,8 +29,10 @@ class TableMainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let item = todoDataSource.getItem(indexPath.row)
         
-        cell.textLabel?.text = todoDataSource.getString(indexPath.row)
+        cell.textLabel?.text = item.text
+        cell.accessoryType = item.checked ? .checkmark : .none
         
         return cell
     }
@@ -39,8 +41,11 @@ class TableMainViewController: UITableViewController {
     //MARK - TABLE VIEW SELECT ROW
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        let accessoryType = cell?.accessoryType
-        cell?.accessoryType = accessoryType == .checkmark ? .none : .checkmark
+        let item = todoDataSource.getItem(indexPath.row)
+        item.checked = !item.checked
+        
+        cell?.accessoryType = item.checked ? .checkmark : .none
+        todoDataSource.saveListToStorage()
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -51,7 +56,7 @@ class TableMainViewController: UITableViewController {
             let textField = alert.textFields![0] as UITextField
             let text = textField.text
             if !(text?.isEmpty)! {
-                self.addNewItem(textField.text!)
+                self.addNewItem(ToDoItem(text: textField.text!, checked: false))
             }
         })
         
@@ -63,8 +68,8 @@ class TableMainViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func addNewItem(_ text: String) {
-        todoDataSource.addNewString(text)
+    func addNewItem(_ item: ToDoItem) {
+        todoDataSource.addNewItem(item)
         tableView.reloadData()
     }
 }
