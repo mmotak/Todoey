@@ -9,32 +9,24 @@
 import Foundation
 
 public class DataSource {
-    private static let KEY = "ToDoItemListPresistance"
-    
     private var list = [ToDoItem]()
-    private let defaults = UserDefaults.standard
+    private let persistanceSource : PersistanceSource
     
-    init() {
+    public static func withUserDefaults() -> DataSource {
+        return DataSource(UserDefaultsSource())
+    }
+    
+    private init(_ p : PersistanceSource) {
+        self.persistanceSource = p
         loadListFromStorage()
     }
     
     private func loadListFromStorage() {
-        guard let dataToLoad = defaults.object(forKey: DataSource.KEY) as? NSData else {
-            print("'ToDoItem' not found in UserDefaults")
-            return
-        }
-        
-        guard let readList = NSKeyedUnarchiver.unarchiveObject(with: dataToLoad as Data) as? [ToDoItem] else {
-            print("Could not unarchive from ToDoItem")
-            return
-        }
-        
-        list = readList
+        list = persistanceSource.load()
     }
     
     public func saveListToStorage() {
-        let dataToSave = NSKeyedArchiver.archivedData(withRootObject: list)
-        defaults.set(dataToSave, forKey: DataSource.KEY)
+        persistanceSource.save(list: list)
     }
     
     public func size() -> Int {

@@ -9,7 +9,7 @@
 import UIKit
 
 class TableMainViewController: UITableViewController {
-    let todoDataSource = DataSource();
+    let todoDataSource = DataSource.withUserDefaults();
     
     override func viewDidLoad() {
         super.viewDidLoad()
