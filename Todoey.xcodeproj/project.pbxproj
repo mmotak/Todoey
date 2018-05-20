@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		287AB03920B180B8001A0F0C /* PersistanceSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03820B180B8001A0F0C /* PersistanceSource.swift */; };
 		287AB03B20B1820F001A0F0C /* UserDefaultsSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03A20B1820F001A0F0C /* UserDefaultsSource.swift */; };
+		287AB03D20B18974001A0F0C /* FileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03C20B18974001A0F0C /* FileSource.swift */; };
 		28AB665320B03D710018B4D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB665220B03D710018B4D0 /* AppDelegate.swift */; };
 		28AB665520B03D710018B4D0 /* TableMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB665420B03D710018B4D0 /* TableMainViewController.swift */; };
 		28AB665820B03D710018B4D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AB665620B03D710018B4D0 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		287AB03820B180B8001A0F0C /* PersistanceSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceSource.swift; sourceTree = "<group>"; };
 		287AB03A20B1820F001A0F0C /* UserDefaultsSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSource.swift; sourceTree = "<group>"; };
+		287AB03C20B18974001A0F0C /* FileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSource.swift; sourceTree = "<group>"; };
 		28AB664F20B03D710018B4D0 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AB665220B03D710018B4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28AB665420B03D710018B4D0 /* TableMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMainViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				28AB666620B0484D0018B4D0 /* DataSource.swift */,
 				287AB03820B180B8001A0F0C /* PersistanceSource.swift */,
 				287AB03A20B1820F001A0F0C /* UserDefaultsSource.swift */,
+				287AB03C20B18974001A0F0C /* FileSource.swift */,
 			);
 			path = persistance;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				28AB666720B0484D0018B4D0 /* DataSource.swift in Sources */,
 				28AB665520B03D710018B4D0 /* TableMainViewController.swift in Sources */,
+				287AB03D20B18974001A0F0C /* FileSource.swift in Sources */,
 				28AB666C20B0686F0018B4D0 /* ToDoItem.swift in Sources */,
 				287AB03B20B1820F001A0F0C /* UserDefaultsSource.swift in Sources */,
 				287AB03920B180B8001A0F0C /* PersistanceSource.swift in Sources */,

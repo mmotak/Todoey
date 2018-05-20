@@ -16,6 +16,10 @@ public class DataSource {
         return DataSource(UserDefaultsSource())
     }
     
+    public static func withFile() -> DataSource {
+        return DataSource(FileSource())
+    }
+    
     private init(_ p : PersistanceSource) {
         self.persistanceSource = p
         loadListFromStorage()

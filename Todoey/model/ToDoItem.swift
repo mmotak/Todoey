@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ToDoItem: NSObject, NSCoding {
+public class ToDoItem: NSObject, NSCoding, Encodable, Decodable {
     private static let TEXT_KEY = "text"
     private static let CHECKED_KEY = "checked"
     
