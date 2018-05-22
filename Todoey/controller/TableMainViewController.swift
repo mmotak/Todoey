@@ -9,7 +9,8 @@
 import UIKit
 
 class TableMainViewController: UITableViewController {
-    let todoDataSource = DBSource() //DataSource.withCoreData() //DBSource();
+    //let todoDataSource = DataSource.withCoreData()
+    let todoDataSource = DBSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,5 +73,44 @@ class TableMainViewController: UITableViewController {
         todoDataSource.add(withTitle: title)
         tableView.reloadData()
     }
+    
+    func reloadData(query : String? = nil) {
+        todoDataSource.loadAll(query: query)
+        tableView.reloadData()
+    }
 }
 
+extension TableMainViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        reloadData(query: searchBar.text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchBar.text?.count == 0) {
+            reloadData()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//eof
