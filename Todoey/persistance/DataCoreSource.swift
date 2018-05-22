@@ -58,15 +58,15 @@ public class DataCoreSource : PersistanceSource {
     
     private func convertToDb(toDoItem: ToDoItem) -> ToDoItemDb {
         let toDoItemDb = ToDoItemDb(context: context)
-        toDoItemDb.title = toDoItem.text
-        toDoItemDb.done = toDoItem.checked
+        toDoItemDb.title = toDoItem.title
+        toDoItemDb.done = toDoItem.done
         return toDoItemDb
     }
     
     private func addToContext(toDoItem: ToDoItem) {
         let toDoItemDb = ToDoItemDb(context: context)
-        toDoItemDb.title = toDoItem.text
-        toDoItemDb.done = toDoItem.checked
+        toDoItemDb.title = toDoItem.title
+        toDoItemDb.done = toDoItem.done
     }
     
     private func convertToModel(toDoItemDb: ToDoItemDb) -> ToDoItem {

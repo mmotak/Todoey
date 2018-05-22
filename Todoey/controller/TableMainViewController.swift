@@ -9,7 +9,7 @@
 import UIKit
 
 class TableMainViewController: UITableViewController {
-    let todoDataSource = DataSource.withCoreData();
+    let todoDataSource = DBSource() //DataSource.withCoreData() //DBSource();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +29,10 @@ class TableMainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        let item = todoDataSource.getItem(indexPath.row)
+        let item = todoDataSource.getItem(at: indexPath.row)
         
-        cell.textLabel?.text = item.text
-        cell.accessoryType = item.checked ? .checkmark : .none
+        cell.textLabel?.text = item.title
+        cell.accessoryType = item.done ? .checkmark : .none
         
         return cell
     }
@@ -41,11 +41,11 @@ class TableMainViewController: UITableViewController {
     //MARK - TABLE VIEW SELECT ROW
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        let item = todoDataSource.getItem(indexPath.row)
-        item.checked = !item.checked
+        let item = todoDataSource.getItem(at: indexPath.row)
+        item.done = !item.done
         
-        cell?.accessoryType = item.checked ? .checkmark : .none
-        todoDataSource.saveListToStorage()
+        cell?.accessoryType = item.done ? .checkmark : .none
+        todoDataSource.update()
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -56,7 +56,7 @@ class TableMainViewController: UITableViewController {
             let textField = alert.textFields![0] as UITextField
             let text = textField.text
             if !(text?.isEmpty)! {
-                self.addNewItem(ToDoItem(text: textField.text!, checked: false))
+                self.addNewItem(withTitle: textField.text!)
             }
         })
         
@@ -68,8 +68,8 @@ class TableMainViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func addNewItem(_ item: ToDoItem) {
-        todoDataSource.addNewItem(item)
+    func addNewItem(withTitle title: String) {
+        todoDataSource.add(withTitle: title)
         tableView.reloadData()
     }
 }

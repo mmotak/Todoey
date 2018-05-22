@@ -12,21 +12,21 @@ public class ToDoItem: NSObject, NSCoding, Codable {
     private static let TEXT_KEY = "text"
     private static let CHECKED_KEY = "checked"
     
-    public var text : String
-    public var checked : Bool
+    public var title : String
+    public var done : Bool
     
     public init(text: String, checked: Bool) {
-        self.checked = checked
-        self.text = text
+        self.done = checked
+        self.title = text
     }
     
     public required init(coder aDecoder: NSCoder) {
-        self.text = aDecoder.decodeObject(forKey: ToDoItem.TEXT_KEY) as? String ?? ""
-        self.checked = aDecoder.decodeBool(forKey: ToDoItem.CHECKED_KEY)
+        self.title = aDecoder.decodeObject(forKey: ToDoItem.TEXT_KEY) as? String ?? ""
+        self.done = aDecoder.decodeBool(forKey: ToDoItem.CHECKED_KEY)
     }
     
     public func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.text, forKey: ToDoItem.TEXT_KEY)
-        aCoder.encode(self.checked, forKey: ToDoItem.CHECKED_KEY)
+        aCoder.encode(self.title, forKey: ToDoItem.TEXT_KEY)
+        aCoder.encode(self.done, forKey: ToDoItem.CHECKED_KEY)
     }
 }

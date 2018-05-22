@@ -33,6 +33,10 @@ public class DataSource {
         list = persistanceSource.load()
     }
     
+    public func update() {
+        saveListToStorage()
+    }
+    
     public func saveListToStorage() {
         persistanceSource.save(list: list)
     }
@@ -41,12 +45,12 @@ public class DataSource {
         return list.count
     }
     
-    public func getItem(_ index: Int) -> ToDoItem {
+    public func getItem(at index : Int) -> ToDoItem {
         return list[index]
     }
     
-    public func addNewItem(_ item: ToDoItem) {
-        list.append(item)
+    public func add(withTitle title: String) {
+        list.append(ToDoItem(text: title, checked: false))
         saveListToStorage()
     }
 }
