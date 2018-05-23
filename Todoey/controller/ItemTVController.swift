@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableMainViewController: UITableViewController {
+class ItemTVController: UITableViewController {
     //let todoDataSource = DataSource.withCoreData()
     let todoDataSource = DBSource()
     
@@ -80,7 +80,7 @@ class TableMainViewController: UITableViewController {
     }
 }
 
-extension TableMainViewController: UISearchBarDelegate {
+extension ItemTVController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         reloadData(query: searchBar.text)
     }
