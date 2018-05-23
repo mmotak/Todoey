@@ -14,12 +14,13 @@ public class DBSource {
     private let appDelegate : AppDelegate
     private let context : NSManagedObjectContext
     private var list : [ToDoItemDb] = [ToDoItemDb]()
-    //private let dbCreator = ToDoItemDbCreator()
+    private let categoryDb : CategoryDb
     
-    init() {
+    init(_ categoryDb : CategoryDb) {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
-        list = load()
+        self.categoryDb = categoryDb
+        loadAll()
     }
     
     public func add(withTitle title: String) {
@@ -27,13 +28,20 @@ public class DBSource {
         save()
     }
     
-    public func loadAll(query : String?) {
+    public func loadAll(query : String? = nil) {
         let request : NSFetchRequest<ToDoItemDb> = ToDoItemDb.fetchRequest()
+        print(categoryDb.name)
+        let categoryPredicate = NSPredicate(format: "category.name MATCHES %@", categoryDb.name!)
+        
         if (query != nil) {
-            request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", query!)
+            let queryPredicate = NSPredicate(format: "title CONTAINS[cd] %@", query!)
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [queryPredicate, categoryPredicate])
+        } else {
+            request.predicate = categoryPredicate
         }
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         list = load(request: request)
+        print(list)
     }
     
     public func remove(at index: Int) {
@@ -57,6 +65,7 @@ public class DBSource {
         let toDoItemDb = ToDoItemDb(context: context)
         toDoItemDb.title = title
         toDoItemDb.done = false
+        toDoItemDb.category = categoryDb
         return toDoItemDb
     }
     
@@ -80,7 +89,7 @@ public class DBSource {
         }
     }
     
-    private func load(request : NSFetchRequest<ToDoItemDb> = ToDoItemDb.fetchRequest()) -> [ToDoItemDb] {
+    private func load(request : NSFetchRequest<ToDoItemDb>) -> [ToDoItemDb] {
         do {
             return try context.fetch(request)
         } catch {

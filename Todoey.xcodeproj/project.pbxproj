@@ -14,6 +14,7 @@
 		287AB03D20B18974001A0F0C /* FileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03C20B18974001A0F0C /* FileSource.swift */; };
 		2890B49420B573A300EDF4B7 /* CategoriesTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890B49320B573A300EDF4B7 /* CategoriesTVController.swift */; };
 		2890B49720B58B6A00EDF4B7 /* DBSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890B49620B58B6A00EDF4B7 /* DBSource.swift */; };
+		2890B49920B5905700EDF4B7 /* CategoryDbSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890B49820B5905700EDF4B7 /* CategoryDbSource.swift */; };
 		28AB665320B03D710018B4D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB665220B03D710018B4D0 /* AppDelegate.swift */; };
 		28AB665520B03D710018B4D0 /* ItemTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB665420B03D710018B4D0 /* ItemTVController.swift */; };
 		28AB665820B03D710018B4D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AB665620B03D710018B4D0 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		287AB03C20B18974001A0F0C /* FileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSource.swift; sourceTree = "<group>"; };
 		2890B49320B573A300EDF4B7 /* CategoriesTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTVController.swift; sourceTree = "<group>"; };
 		2890B49620B58B6A00EDF4B7 /* DBSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSource.swift; sourceTree = "<group>"; };
+		2890B49820B5905700EDF4B7 /* CategoryDbSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDbSource.swift; sourceTree = "<group>"; };
 		28AB664F20B03D710018B4D0 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AB665220B03D710018B4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28AB665420B03D710018B4D0 /* ItemTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTVController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				2890B49620B58B6A00EDF4B7 /* DBSource.swift */,
+				2890B49820B5905700EDF4B7 /* CategoryDbSource.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				28AB666C20B0686F0018B4D0 /* ToDoItem.swift in Sources */,
 				2890B49420B573A300EDF4B7 /* CategoriesTVController.swift in Sources */,
 				2890B49720B58B6A00EDF4B7 /* DBSource.swift in Sources */,
+				2890B49920B5905700EDF4B7 /* CategoryDbSource.swift in Sources */,
 				283C1FCA20B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld in Sources */,
 				283C1FCC20B1ECD700C6A5C3 /* DataCoreSource.swift in Sources */,
 				287AB03B20B1820F001A0F0C /* UserDefaultsSource.swift in Sources */,

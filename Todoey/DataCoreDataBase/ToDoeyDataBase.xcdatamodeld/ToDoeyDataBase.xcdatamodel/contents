@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CategoryDb" representedClassName="CategoryDb" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="items" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ToDoItemDb" inverseName="category" inverseEntity="ToDoItemDb" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToDoItemDb" inverseName="category" inverseEntity="ToDoItemDb" syncable="YES"/>
     </entity>
     <entity name="ToDoItemDb" representedClassName=".ToDoItemDb" syncable="YES" codeGenerationType="class">
         <attribute name="done" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -10,7 +10,7 @@
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryDb" inverseName="items" inverseEntity="CategoryDb" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ToDoItemDb" positionX="-54" positionY="-9" width="128" height="88"/>
         <element name="CategoryDb" positionX="-290" positionY="-6" width="128" height="73"/>
+        <element name="ToDoItemDb" positionX="-54" positionY="-9" width="128" height="88"/>
     </elements>
 </model>

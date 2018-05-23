@@ -10,7 +10,12 @@ import UIKit
 
 class ItemTVController: UITableViewController {
     //let todoDataSource = DataSource.withCoreData()
-    let todoDataSource = DBSource()
+    var todoDataSource : DBSource?
+    var categoryDb : CategoryDb? {
+        didSet {
+            todoDataSource = DBSource(categoryDb!)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +30,15 @@ class ItemTVController: UITableViewController {
     //MARK - TABLE VIEW DATA SOURCE
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoDataSource.size()
+        return todoDataSource!.size()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        let item = todoDataSource.getItem(at: indexPath.row)
+        let item = todoDataSource?.getItem(at: indexPath.row)
         
-        cell.textLabel?.text = item.title
-        cell.accessoryType = item.done ? .checkmark : .none
+        cell.textLabel?.text = item?.title
+        cell.accessoryType = (item?.done)! ? .checkmark : .none
         
         return cell
     }
@@ -42,11 +47,11 @@ class ItemTVController: UITableViewController {
     //MARK - TABLE VIEW SELECT ROW
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        let item = todoDataSource.getItem(at: indexPath.row)
-        item.done = !item.done
+        let item = todoDataSource?.getItem(at: indexPath.row)
+        item?.done = !(item?.done)!
         
-        cell?.accessoryType = item.done ? .checkmark : .none
-        todoDataSource.update()
+        cell?.accessoryType = (item?.done)! ? .checkmark : .none
+        todoDataSource?.update()
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -70,12 +75,12 @@ class ItemTVController: UITableViewController {
     }
     
     func addNewItem(withTitle title: String) {
-        todoDataSource.add(withTitle: title)
+        todoDataSource?.add(withTitle: title)
         tableView.reloadData()
     }
     
     func reloadData(query : String? = nil) {
-        todoDataSource.loadAll(query: query)
+        todoDataSource?.loadAll(query: query)
         tableView.reloadData()
     }
 }
