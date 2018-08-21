@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		00F61469368DD564F4C56AB0 /* Pods_Todoey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFCACE91831C5B2D8BE587C /* Pods_Todoey.framework */; };
+		2818133C21295D6D004362EB /* RealmItemDBSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818133B21295D6D004362EB /* RealmItemDBSource.swift */; };
 		283C1FCA20B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 283C1FC820B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld */; };
 		283C1FCC20B1ECD700C6A5C3 /* DataCoreSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C1FCB20B1ECD700C6A5C3 /* DataCoreSource.swift */; };
 		287AB03920B180B8001A0F0C /* PersistanceSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03820B180B8001A0F0C /* PersistanceSource.swift */; };
 		287AB03B20B1820F001A0F0C /* UserDefaultsSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03A20B1820F001A0F0C /* UserDefaultsSource.swift */; };
 		287AB03D20B18974001A0F0C /* FileSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AB03C20B18974001A0F0C /* FileSource.swift */; };
 		288CC45721283574000A4022 /* MainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC45621283574000A4022 /* MainDataSource.swift */; };
+		288CC45921284A31000A4022 /* RItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC45821284A31000A4022 /* RItem.swift */; };
+		288CC45B21284A71000A4022 /* RCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC45A21284A71000A4022 /* RCategory.swift */; };
+		288CC45D212851AA000A4022 /* RealmCategoryDbSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC45C212851AA000A4022 /* RealmCategoryDbSource.swift */; };
 		2890B49420B573A300EDF4B7 /* CategoriesTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890B49320B573A300EDF4B7 /* CategoriesTVController.swift */; };
-		2890B49720B58B6A00EDF4B7 /* DBSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890B49620B58B6A00EDF4B7 /* DBSource.swift */; };
+		2890B49720B58B6A00EDF4B7 /* ItemDBSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890B49620B58B6A00EDF4B7 /* ItemDBSource.swift */; };
 		2890B49920B5905700EDF4B7 /* CategoryDbSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890B49820B5905700EDF4B7 /* CategoryDbSource.swift */; };
 		28AB665320B03D710018B4D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB665220B03D710018B4D0 /* AppDelegate.swift */; };
 		28AB665520B03D710018B4D0 /* ItemTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB665420B03D710018B4D0 /* ItemTVController.swift */; };
@@ -29,14 +33,18 @@
 /* Begin PBXFileReference section */
 		10609BFE95A1B04CD329E09F /* Pods-Todoey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.debug.xcconfig"; sourceTree = "<group>"; };
 		1BFCACE91831C5B2D8BE587C /* Pods_Todoey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2818133B21295D6D004362EB /* RealmItemDBSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmItemDBSource.swift; sourceTree = "<group>"; };
 		283C1FC920B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoeyDataBase.xcdatamodel; sourceTree = "<group>"; };
 		283C1FCB20B1ECD700C6A5C3 /* DataCoreSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoreSource.swift; sourceTree = "<group>"; };
 		287AB03820B180B8001A0F0C /* PersistanceSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceSource.swift; sourceTree = "<group>"; };
 		287AB03A20B1820F001A0F0C /* UserDefaultsSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSource.swift; sourceTree = "<group>"; };
 		287AB03C20B18974001A0F0C /* FileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSource.swift; sourceTree = "<group>"; };
 		288CC45621283574000A4022 /* MainDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataSource.swift; sourceTree = "<group>"; };
+		288CC45821284A31000A4022 /* RItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RItem.swift; sourceTree = "<group>"; };
+		288CC45A21284A71000A4022 /* RCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCategory.swift; sourceTree = "<group>"; };
+		288CC45C212851AA000A4022 /* RealmCategoryDbSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCategoryDbSource.swift; sourceTree = "<group>"; };
 		2890B49320B573A300EDF4B7 /* CategoriesTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTVController.swift; sourceTree = "<group>"; };
-		2890B49620B58B6A00EDF4B7 /* DBSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSource.swift; sourceTree = "<group>"; };
+		2890B49620B58B6A00EDF4B7 /* ItemDBSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDBSource.swift; sourceTree = "<group>"; };
 		2890B49820B5905700EDF4B7 /* CategoryDbSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDbSource.swift; sourceTree = "<group>"; };
 		28AB664F20B03D710018B4D0 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AB665220B03D710018B4D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,9 +81,11 @@
 		2890B49520B58A5600EDF4B7 /* database */ = {
 			isa = PBXGroup;
 			children = (
-				2890B49620B58B6A00EDF4B7 /* DBSource.swift */,
+				2890B49620B58B6A00EDF4B7 /* ItemDBSource.swift */,
 				2890B49820B5905700EDF4B7 /* CategoryDbSource.swift */,
 				288CC45621283574000A4022 /* MainDataSource.swift */,
+				288CC45C212851AA000A4022 /* RealmCategoryDbSource.swift */,
+				2818133B21295D6D004362EB /* RealmItemDBSource.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -118,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				28AB666B20B0686F0018B4D0 /* ToDoItem.swift */,
+				288CC45821284A31000A4022 /* RItem.swift */,
+				288CC45A21284A71000A4022 /* RCategory.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -243,15 +255,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Todoey-checkManifestLockResult.txt",
 			);
@@ -265,16 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Todoey/Pods-Todoey-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -294,16 +298,20 @@
 				288CC45721283574000A4022 /* MainDataSource.swift in Sources */,
 				28AB666720B0484D0018B4D0 /* DataSource.swift in Sources */,
 				28AB665520B03D710018B4D0 /* ItemTVController.swift in Sources */,
+				288CC45921284A31000A4022 /* RItem.swift in Sources */,
 				287AB03D20B18974001A0F0C /* FileSource.swift in Sources */,
 				28AB666C20B0686F0018B4D0 /* ToDoItem.swift in Sources */,
+				288CC45B21284A71000A4022 /* RCategory.swift in Sources */,
 				2890B49420B573A300EDF4B7 /* CategoriesTVController.swift in Sources */,
-				2890B49720B58B6A00EDF4B7 /* DBSource.swift in Sources */,
+				2890B49720B58B6A00EDF4B7 /* ItemDBSource.swift in Sources */,
 				2890B49920B5905700EDF4B7 /* CategoryDbSource.swift in Sources */,
 				283C1FCA20B1EA9B00C6A5C3 /* ToDoeyDataBase.xcdatamodeld in Sources */,
 				283C1FCC20B1ECD700C6A5C3 /* DataCoreSource.swift in Sources */,
+				288CC45D212851AA000A4022 /* RealmCategoryDbSource.swift in Sources */,
 				287AB03B20B1820F001A0F0C /* UserDefaultsSource.swift in Sources */,
 				287AB03920B180B8001A0F0C /* PersistanceSource.swift in Sources */,
 				28AB665320B03D710018B4D0 /* AppDelegate.swift in Sources */,
+				2818133C21295D6D004362EB /* RealmItemDBSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

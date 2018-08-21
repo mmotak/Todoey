@@ -10,7 +10,8 @@ import UIKit
 
 class CategoriesTVController: UITableViewController {
     private static let ITEMS : String = "goToItems"
-    let categorySource = CategoryDbSource()
+    //let categorySource = MainDataSource.INSTANCE.datacore.categoryDbSource
+    let categorySource = MainDataSource.INSTANCE.realm.categoryDbSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,7 @@ class CategoriesTVController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == CategoriesTVController.ITEMS) {
             let itemsController = segue.destination as! ItemTVController
-            
+
             if let index = tableView.indexPathForSelectedRow {
                 itemsController.categoryDb = categorySource.getItem(at: index.row)
             }
@@ -65,7 +66,7 @@ class CategoriesTVController: UITableViewController {
     }
     
     func reloadData(query : String? = nil) {
-        categorySource.loadAll(query: query)
+        //categorySource.loadAll(query: query)
         tableView.reloadData()
     }
 

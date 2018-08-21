@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-public class DBSource {
+public class ItemDBSource {
     private let appDelegate : AppDelegate
     private let context : NSManagedObjectContext
     private var list : [ToDoItemDb] = [ToDoItemDb]()

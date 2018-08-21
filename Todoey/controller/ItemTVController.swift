@@ -10,10 +10,10 @@ import UIKit
 
 class ItemTVController: UITableViewController {
     //let todoDataSource = DataSource.withCoreData()
-    var todoDataSource : DBSource?
-    var categoryDb : CategoryDb? {
+    var todoDataSource : RealmItemDBSource?
+    var categoryDb : RCategory? {
         didSet {
-            todoDataSource = DBSource(categoryDb!)
+            todoDataSource = MainDataSource.INSTANCE.realm.itemDBSource(categoryDb!)
         }
     }
     
@@ -30,7 +30,7 @@ class ItemTVController: UITableViewController {
     //MARK - TABLE VIEW DATA SOURCE
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoDataSource!.size()
+        return todoDataSource?.size() ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,11 +47,13 @@ class ItemTVController: UITableViewController {
     //MARK - TABLE VIEW SELECT ROW
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        let item = todoDataSource?.getItem(at: indexPath.row)
-        item?.done = !(item?.done)!
+//        let item = todoDataSource?.getItem(at: indexPath.row)
+//        item?.done = !(item?.done)!
+        
+        let item = todoDataSource?.update(at: indexPath.row)
         
         cell?.accessoryType = (item?.done)! ? .checkmark : .none
-        todoDataSource?.update()
+        //todoDataSource?.update()
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -100,6 +102,8 @@ extension ItemTVController: UISearchBarDelegate {
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }
+        } else {
+            reloadData(query: searchBar.text)
         }
     }
 }
